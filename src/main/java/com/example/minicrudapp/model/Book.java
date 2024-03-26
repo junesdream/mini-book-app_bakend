@@ -27,4 +27,9 @@ public class Book {
 
     private String language;
 
+    public Book(Long bookId, String testTitel, String testAutor) {
+    }
+
+    public Book(String testTitle, String testAuthor, String testGenre, String testLanguage) {
+    }
 }
