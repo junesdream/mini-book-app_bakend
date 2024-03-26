@@ -23,4 +23,8 @@ public class Book {
 
     private String author;
 
+    private String genre;
+
+    private String language;
+
 }

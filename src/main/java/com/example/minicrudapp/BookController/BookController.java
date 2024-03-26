@@ -11,6 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+
+
+@CrossOrigin(origins = "http://localhost:3000")
+//@CrossOrigin(origins = "http://localhost:3000", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE }, allowCredentials = "true")
 @RestController
 public class BookController {
     @Autowired
@@ -58,6 +62,8 @@ public class BookController {
             Book updateBookData = oldBookData.get();
             updateBookData.setTitle(newBookData.getTitle());
             updateBookData.setAuthor(newBookData.getAuthor());
+            updateBookData.setGenre(newBookData.getGenre());
+            updateBookData.setLanguage(newBookData.getLanguage());
 
             Book bookObj = bookRepo.save(updateBookData);
             return new ResponseEntity<>(bookObj, HttpStatus.OK);
